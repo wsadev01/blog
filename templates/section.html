@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% block section %}
+	{{section.content | safe }}
+	<table class="table-nav">
+		<tr class="tr-nav">
+		<th class="th-nav">Título</th>
+		<th class="th-nav">Fecha</th>
+		<th class="th-nav">Descripción</th>
+		</tr>
+		{% for page in paginator.pages %}
+			<tr class="tr-nav">
+				<td class="td-nav">
+					<a href={{page.permalink}} target=_blank>{{page.title}}</a></td>
+				<td class="td-nav">{{page.date}}</td>
+				<td class="td-nav">{{page.description}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock section %}
+
+{% block pagination %}
+<div class="pagination">
+	{% if paginator.previous %}
+		<a rel="prev" href="{{paginator.previous}}"><pre>&lt;--= prev</pre></a>
+	{% else %}
+		<a rel="next" style="pointer-events: none; cursor:disabled; color: #3F3F3F""><pre>----\----</pre></a>
+	{% endif %}
+
+		<a rel="prev" href="{{paginator.first}}"><pre>beginning</pre></a>
+
+	{% if paginator.next %}
+		<a rel="next" href="{{paginator.next}}"><pre>next =--&gt;</pre></a>
+	{% else %}
+		<a rel="next" style="pointer-events: none; cursor:disabled; color: #3F3F3F"><pre>----/----</pre></a>
+	{% endif %}
+</div>
+{% endblock pagination %}
