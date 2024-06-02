@@ -23,7 +23,7 @@
 			<navbar>
 				{% for section in ["inicio", "apuntes", "infosec", "transcripciones", "tutoriales"] %}
 					{% if section == "inicio" %}
-						<a href="/.">{{section | capitalize}}</a>
+					<a href="{{config.base_url}}">{{section | capitalize}}</a>
 					{% else %}
 						<a href={{get_url(path=section)}}>{{section | capitalize}}</a>
 					{% endif %}
