@@ -1,0 +1,6 @@
+name = "Libro carmesí"
+min_version = "0.18.0"
+
+[author]
+name = "Aitor S. Wagner"
+homepage = "https://github.com/wsadev01/bookie"
