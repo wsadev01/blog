@@ -24,6 +24,8 @@
 				{% for section in ["inicio", "sistemas operativos", "infosec", "transcripciones", "tutoriales"] %}
 					{% if section == "inicio" %}
 					<a href="{{config.base_url}}">{{section | capitalize}}</a>
+					{% elif section == "sistemas operativos" %}
+						<a href={{get_url(path="linux")}}>{{section | capitalize}}</a>
 					{% else %}
 						<a href={{get_url(path=section)}}>{{section | capitalize}}</a>
 					{% endif %}
