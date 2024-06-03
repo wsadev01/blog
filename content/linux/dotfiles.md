@@ -1,5 +1,5 @@
 +++
-title="Bitacora dotfiles + re-instalación"
+title="Bitacora + dotfiles y re-instalación"
 date=2024-06-02
 description="Tips y bitácora de lo que es hacer dotfiles y reinstalar un sistema"
 +++
@@ -54,6 +54,24 @@ Me hice unos buenos mates, y a seguir.
 Listo, logré acomodar mi css, armé el estilo bookie.toml, disponible en mi repo :) (Redacción -666 :p)
 Ahora a hacer el deploy de github-pages
 
+##### 02/06/2024 - 18:30
+Listo el deploy de github-pages, muy importante no hay que ejecutar el deploy en la branch main, porque
+te va a sobre-escribir todo, ya sé que para algunxs es OBVIO, pero para personas que estan aprendiendo
+sobre la marcha (como yo, y mis amigos imaginarios que leen este blog ahre), es algo que no es tan obvio,
+además de que no hay un cheatsheet conceptual que explique CADA cosa que existe, es prueba y error, ahora
+a seguir con el `install.sh` y con el sistema (Cabe destacar qeu en el medio webié, hice housekeeping y
+toqué guitarra como 1 hora)
+
+##### 02/06/2024 - 20:33
+Terminé el install.sh pero ahora quiero asegurarme de tener todos mis dotfiles configurados, por ahora tengo
+la terminal (y [Xresources](https://wiki.archlinux.org/title/X_resources) por consecuencia), nvim (a confirmar...), newsboat,
+.bashrc y no sé que mas...
+
+##### 02/06/2024 - 20:58
+Me falta hacer el script de backup y ya estoy.
+
+##### 03/06/202 - 00:42
+Renegué un montón con el tar para que me acomode multiples directorios en un solo `gzip`. Ya ahora tengo que dormir para trabajar mañana, no alcanzaron 3 días, que proceso arduo xD
 
 ## Visualización de paquetes
 Para obtener los paquetes nativos hacemos:
