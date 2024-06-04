@@ -4,16 +4,25 @@ date=2024-06-02
 description="Tips y bitácora de lo que es hacer dotfiles y reinstalar un sistema"
 +++
 
+## WORK IN PROGRESS
+Falta todavia, pero cuando termine va a haber una bitácora, y al inicio los pasos que tomé. (De forma estructurada)
+
+
+
 ## Intro
 Hacer dotfiles es un trabajo arduo en un inicio, pero luego es una práctica que no puede faltar.
 Hay muchas formas, yo utilizo un `.git` en mi home, donde excluyo todo en el `.gitignore` e incluyo
 específicamente lo que me interesa utilizando el parametro `-f` del comando `git add`.
 
-## Pro tips
+## Comandos útiles
 
 | Comando | Utilidad    |
 |---------|-------------|
-| `pacman -Qqent` | Guardá los paquetes que instalaste (Excluye los q son dependencias) |
+| `pacman -Qqent > native.txt` | Guardá los paquetes oficiales que instalaste (Excluye los q son dependencias) |
+| `pacman -Qqemt > foreign.txt` | Guardá los paquetes no-oficiales (AUR) que instalaste (Excluye los q son dependencias) |
+| `pacman -Sy - < <(curl $URL_DEL_TXT)` | Instalá los paquetes desde un `.txt` en internet |
+| `curl $URL_DEL_BASH`&#x7c;`bash` | Ejecuta un script de un `.bash` de internet |
+
 
 ## Bitácora
 ##### 01/06/2024 - 22:29
@@ -70,18 +79,27 @@ la terminal (y [Xresources](https://wiki.archlinux.org/title/X_resources) por co
 ##### 02/06/2024 - 20:58
 Me falta hacer el script de backup y ya estoy.
 
-##### 03/06/202 - 00:42
+##### 03/06/2024 - 00:42
 Renegué un montón con el tar para que me acomode multiples directorios en un solo `gzip`. Ya ahora tengo que dormir para trabajar mañana, no alcanzaron 3 días, que proceso arduo xD
 
-## Visualización de paquetes
-Para obtener los paquetes nativos hacemos:
-`pacman -Qn` y vamos a tener una lista importante, luego podemos guardarla a un archivo e iterar por ello
+##### 03/06/2024 - 21:13
+Terminé de trabajar a las 17, pero estuve descansando y escribiendo otro artículo, ahora voy a seguir haciendo el backup, pero antes modificaré la polybar, realmente quiero que matcheen los colores...
+lo mejor de esto es que después tengo que hacerlo con mi pc personal c:
 
-Para obtener los paquetes de AUR hacemos:
-`pacman -Qm`
+##### 03/06/2024 - 22:22
+Terminé de acomodar la branch `work`, ahora voy a acomodar los `dotfiles` globales
 
-## Backup
+1. `/etc/lightdm/lightdm.conf`
+2. `/etc/lightdm/slick-greeter.conf`
+3. `/etc/X11/xinit/xinitrc`
+4. `/etc/vconsole.conf`
+5. `/usr/share/backgrounds/greeter-background.jpg`
 
-1. Backup de nuestro usuario con `~/.scripts/backup.bash`
-2. Reinstalar arch y ejecutar el `arch-chroot`
-3. Ejecutar `curl https://wsadev01.github.io/setup.bash | bash`
+#### 04/06/2024 - 00:27
+Listo los archivos, también modifiqué el script `backup.sh` y agregué el `sudo cp .globdotfiles/* /` al `install.sh`. Ahora a grabar la imágen de `archlinux` en un usb con `Ventoy`
+
+
+
+
+
+

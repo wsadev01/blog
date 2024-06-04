@@ -21,13 +21,13 @@
 			<h1 class="display-1">{{config.extra.title_insite}}</h1>
 			<noscript class="noscript-footer">Este sitio está libre de JavaScript :)</noscript>
 			<navbar>
-				{% for section in ["inicio", "sistemas operativos", "infosec", "transcripciones", "tutoriales"] %}
+				{% for section in ["inicio", "sistemas operativos", "reflexiones", "infosec", "transcripciones", "tutoriales"] %}
 					{% if section == "inicio" %}
-					<a href="{{config.base_url}}">{{section | capitalize}}</a>
+					<a class="link" href="{{config.base_url}}">{{section | capitalize}}</a>
 					{% elif section == "sistemas operativos" %}
-						<a href={{get_url(path="linux")}}>{{section | capitalize}}</a>
+						<a class="link" href={{get_url(path="linux")}}>{{section | capitalize}}</a>
 					{% else %}
-						<a href={{get_url(path=section)}}>{{section | capitalize}}</a>
+						<a class="link" href={{get_url(path=section)}}>{{section | capitalize}}</a>
 					{% endif %}
 				{% endfor %}
 			</navbar>

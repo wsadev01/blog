@@ -11,6 +11,7 @@ $dark-hover: #fffc43;
 $dark-visited: #df6c63;
 $dark-visited-hover: #dfdc63;
 
+
 h1 {
   font-size: 7.5vh;
   font-family: "Montserrat", sans-serif;
@@ -22,7 +23,9 @@ h2 {
   font-size: 5vh;
   font-family: "Montserrat", sans-serif;
   font-weight: 333;
-  margin: 0; padding-top: 4vh; padding-bottom: 1vh;
+  margin: 0;
+  padding-top: 4vh;
+  padding-bottom: 1vh;
 }
 
 
@@ -55,7 +58,9 @@ h6 {
   font-weight: 333;
 }
 
-;
+.navlink {
+  padding-right: 8px;
+}
 
 code {
   padding-left: 1px;
@@ -82,6 +87,7 @@ a {
   padding: 1vw;
   justify-content: center;
 }
+
 .pagination a {
   padding: 1vw;
 }
@@ -158,12 +164,12 @@ light a:visited {
 
 .th-nav:nth-child(1),
 .td-nav:nth-child(1) {
-  width: 30% !important;
+  width: 29% !important;
 }
 
 .th-nav:nth-child(2),
 .td-nav:nth-child(2) {
-  width: 10% !important;
+  width: 11% !important;
 }
 
 .th-nav:nth-child(3),
