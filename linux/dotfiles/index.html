@@ -1,0 +1,138 @@
+<html lang=es>
+
+<head>
+	<title>Linux or die</title>
+	<meta name="viewport" content="device-width=default initial-scale=1.0" />
+	<meta charset="utf-8">
+	<!-- Fonts :D -->
+	<link rel="stylesheet" href='https://wsadev01.github.io/blog/style.css'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;1,100&display=swap"
+		rel="stylesheet">
+</head>
+
+<body class="dark midfocus">
+	<header>
+		<div class="dark">
+			<h1 class="display-1">Crisoleando</h1>
+			<noscript class="noscript-footer">Este sitio está libre de JavaScript :)</noscript>
+			<navbar>
+				
+					
+					<a class="link" href="https:&#x2F;&#x2F;wsadev01.github.io&#x2F;blog">Inicio</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/linux>Sistemas operativos</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/reflexiones>Reflexiones</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/infosec>Infosec</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/transcripciones>Transcripciones</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/tutoriales>Tutoriales</a>
+					
+				
+			</navbar>
+		</div>
+	</header>
+	<hr />
+	
+
+	
+	
+	
+	
+	
+<h1>Bitacora + dotfiles y re-instalación</h1>
+<br>
+<h2 id="work-in-progress">WORK IN PROGRESS</h2>
+<p>Falta todavia, pero cuando termine va a haber una bitácora, y al inicio los pasos que tomé. (De forma estructurada)</p>
+<h2 id="intro">Intro</h2>
+<p>Hacer dotfiles es un trabajo arduo en un inicio, pero luego es una práctica que no puede faltar.
+Hay muchas formas, yo utilizo un <code>.git</code> en mi home, donde excluyo todo en el <code>.gitignore</code> e incluyo
+específicamente lo que me interesa utilizando el parametro <code>-f</code> del comando <code>git add</code>.</p>
+<h2 id="comandos-utiles">Comandos útiles</h2>
+<table><thead><tr><th>Comando</th><th>Utilidad</th></tr></thead><tbody>
+<tr><td><code>pacman -Qqent &gt; native.txt</code></td><td>Guardá los paquetes oficiales que instalaste (Excluye los q son dependencias)</td></tr>
+<tr><td><code>pacman -Qqemt &gt; foreign.txt</code></td><td>Guardá los paquetes no-oficiales (AUR) que instalaste (Excluye los q son dependencias)</td></tr>
+<tr><td><code>pacman -Sy - &lt; &lt;(curl $URL_DEL_TXT)</code></td><td>Instalá los paquetes desde un <code>.txt</code> en internet</td></tr>
+<tr><td><code>curl $URL_DEL_BASH</code>|<code>bash</code></td><td>Ejecuta un script de un <code>.bash</code> de internet</td></tr>
+</tbody></table>
+<h2 id="bitacora">Bitácora</h2>
+<h5 id="01-06-2024-22-29">01/06/2024 - 22:29</h5>
+<p>Creí que iba a ser mucho mas rápido, pero tal vez ni un fin de semana me alcance, especialmente la parte de la re-configuración de terminales,
+ya que me pasé a UXTerm debido a que voy a usar <code>tmux</code> para todo lo referido a Tabs y coso...</p>
+<h5 id="01-06-2024-23-33">01/06/2024 - 23:33</h5>
+<p>Me pasé a rxvt-unicode al final (URxvt), cambié el theme a gruvbox-material (dark).</p>
+<h5 id="01-06-2024-23-44">01/06/2024 - 23:44</h5>
+<p>Terminé de configurar el urxvt, también refactoricé algunas configuraciónes de nvim. (El lualine y el theme.lua)</p>
+<h5 id="02-06-2024-00-09">02/06/2024 - 00:09</h5>
+<p>Me quedé jugando unas partiditas de lichess... seguimos con los paquetes, diferenciando AUR de los oficiales.</p>
+<h5 id="02-06-2024-00-46">02/06/2024 - 00:46</h5>
+<p>Con bastante sueño ya, estoy con esto desde hoy temprano pero arranqué a &quot;bitacorear&quot; ahora, me sirve para
+concentrarme y para llevar un registro de mis propios pasos, y bueno, si algun gordo nerd le interesa leer esto.</p>
+<p>Ya terminé de acomodar los paquetes en native (Oficiales) y foreign.txt (AUR), ahora voy por un script que sea <code>install.sh</code>.</p>
+<p>Antes quería automatizar el particionado de discos, ahora realmente prefiero hacer esa parte a mano, y el post-install automático. Creo que es lo mas rápido y lo más directo tbh.</p>
+<h5 id="02-06-2024-01-03">02/06/2024 - 01:03</h5>
+<p>Lo único malo de urxvt es que con nvim no puedo abrir links. Ahora vamos a subir todo esto y acomodar 2
+pájaros de un tiro, mi blog en github, y los static files que sirven a la instalación de mis dotfiles</p>
+<h5 id="02-06-2024-03-25">02/06/2024 - 03:25</h5>
+<p>Está quedando bien, y con un estilo que representa muy bien mi personalidad, me voy a dormir, hacia bastante
+no usaba CSS.</p>
+<h5 id="02-06-2024-13-10">02/06/2024 - 13:10</h5>
+<p>Me re dormí, <a href="https://youtu.be/55zFvFSVgUg?t=38">pero ya me desperté frente a la pc me senté, el desayuno ya tomé el <s>correo</s> RSS checaré...</a>.
+Me hice unos buenos mates, y a seguir.</p>
+<h5 id="02-06-2024-15-59">02/06/2024 - 15:59</h5>
+<p>Listo, logré acomodar mi css, armé el estilo bookie.toml, disponible en mi repo :) (Redacción -666 :p)
+Ahora a hacer el deploy de github-pages</p>
+<h5 id="02-06-2024-18-30">02/06/2024 - 18:30</h5>
+<p>Listo el deploy de github-pages, muy importante no hay que ejecutar el deploy en la branch main, porque
+te va a sobre-escribir todo, ya sé que para algunxs es OBVIO, pero para personas que estan aprendiendo
+sobre la marcha (como yo, y mis amigos imaginarios que leen este blog ahre), es algo que no es tan obvio,
+además de que no hay un cheatsheet conceptual que explique CADA cosa que existe, es prueba y error, ahora
+a seguir con el <code>install.sh</code> y con el sistema (Cabe destacar qeu en el medio webié, hice housekeeping y
+toqué guitarra como 1 hora)</p>
+<h5 id="02-06-2024-20-33">02/06/2024 - 20:33</h5>
+<p>Terminé el install.sh pero ahora quiero asegurarme de tener todos mis dotfiles configurados, por ahora tengo
+la terminal (y <a href="https://wiki.archlinux.org/title/X_resources">Xresources</a> por consecuencia), nvim (a confirmar...), newsboat,
+.bashrc y no sé que mas...</p>
+<h5 id="02-06-2024-20-58">02/06/2024 - 20:58</h5>
+<p>Me falta hacer el script de backup y ya estoy.</p>
+<h5 id="03-06-2024-00-42">03/06/2024 - 00:42</h5>
+<p>Renegué un montón con el tar para que me acomode multiples directorios en un solo <code>gzip</code>. Ya ahora tengo que dormir para trabajar mañana, no alcanzaron 3 días, que proceso arduo xD</p>
+<h5 id="03-06-2024-21-13">03/06/2024 - 21:13</h5>
+<p>Terminé de trabajar a las 17, pero estuve descansando y escribiendo otro artículo, ahora voy a seguir haciendo el backup, pero antes modificaré la polybar, realmente quiero que matcheen los colores...
+lo mejor de esto es que después tengo que hacerlo con mi pc personal c:</p>
+<h5 id="03-06-2024-22-22">03/06/2024 - 22:22</h5>
+<p>Terminé de acomodar la branch <code>work</code>, ahora voy a acomodar los <code>dotfiles</code> globales</p>
+<ol>
+<li><code>/etc/lightdm/lightdm.conf</code></li>
+<li><code>/etc/lightdm/slick-greeter.conf</code></li>
+<li><code>/etc/X11/xinit/xinitrc</code></li>
+<li><code>/etc/vconsole.conf</code></li>
+<li><code>/usr/share/backgrounds/greeter-background.jpg</code></li>
+</ol>
+<h4 id="04-06-2024-00-27">04/06/2024 - 00:27</h4>
+<p>Listo los archivos, también modifiqué el script <code>backup.sh</code> y agregué el <code>sudo cp .globdotfiles/* /</code> al <code>install.sh</code>. Ahora a grabar la imágen de <code>archlinux</code> en un usb con <code>Ventoy</code></p>
+
+
+	<noscript>
+		<div style="height:30px" />
+	</noscript>
+</body>
+
+</html>

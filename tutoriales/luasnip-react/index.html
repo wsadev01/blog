@@ -1,0 +1,94 @@
+<html lang=es>
+
+<head>
+	<title>Linux or die</title>
+	<meta name="viewport" content="device-width=default initial-scale=1.0" />
+	<meta charset="utf-8">
+	<!-- Fonts :D -->
+	<link rel="stylesheet" href='https://wsadev01.github.io/blog/style.css'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;1,100&display=swap"
+		rel="stylesheet">
+</head>
+
+<body class="dark midfocus">
+	<header>
+		<div class="dark">
+			<h1 class="display-1">Crisoleando</h1>
+			<noscript class="noscript-footer">Este sitio está libre de JavaScript :)</noscript>
+			<navbar>
+				
+					
+					<a class="link" href="https:&#x2F;&#x2F;wsadev01.github.io&#x2F;blog">Inicio</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/linux>Sistemas operativos</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/reflexiones>Reflexiones</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/infosec>Infosec</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/transcripciones>Transcripciones</a>
+					
+				
+					
+						<a class="link" href=https://wsadev01.github.io/blog/tutoriales>Tutoriales</a>
+					
+				
+			</navbar>
+		</div>
+	</header>
+	<hr />
+	
+
+	
+	
+	
+	
+	
+<h1>Poner snippets para react usando Luasnip</h1>
+<br>
+<h2 id="luasnip-jsx-o-javascriptreact">Luasnip <em>jsx</em> o <em>javascriptreact</em></h2>
+<p>Este es un tutorial intermedio-avanzado, requiere que entiendas como funciona luasnip
+y sus funciones.</p>
+<p>Lo mas importante, es entender que <code>javascriptreact</code> es como luasnip reconoce los archivos <code>.jsx</code></p>
+<p>Hay dos soluciones disponibles</p>
+<h5 id="1-iterar-sobre-una-lista-de-elementos">1. Iterar sobre una lista de elementos</h5>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#b48ead;">local </span><span style="color:#bf616a;">snippets </span><span>= {</span><span style="color:#65737e;">-- o sinó importalos require(&quot;../snippets&quot;)
+</span><span>    </span><span style="color:#a3be8c;">javascript </span><span>= {</span><span style="color:#d08770;">...</span><span>},
+</span><span>    </span><span style="color:#a3be8c;">javascriptreact </span><span>= {</span><span style="color:#d08770;">...</span><span>}
+</span><span>};
+</span><span style="color:#b48ead;">for </span><span style="color:#bf616a;">lang</span><span>, </span><span style="color:#bf616a;">available_snippets </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">pairs</span><span>(</span><span style="color:#bf616a;">snippets</span><span>) </span><span style="color:#b48ead;">do
+</span><span>    </span><span style="color:#bf616a;">luasnip</span><span>.</span><span style="color:#bf616a;">add_snippets</span><span>(</span><span style="color:#bf616a;">lang</span><span>, </span><span style="color:#bf616a;">available_snippets</span><span>)
+</span><span style="color:#b48ead;">end
+</span></code></pre>
+<h5 id="2-importarlos-todos-de-una">2. Importarlos todos de una</h5>
+<pre data-lang="lua" style="background-color:#2b303b;color:#c0c5ce;" class="language-lua "><code class="language-lua" data-lang="lua"><span style="color:#bf616a;">luasnip</span><span>.snippets = {
+</span><span>    </span><span style="color:#a3be8c;">html </span><span>= {</span><span style="color:#d08770;">...</span><span>},
+</span><span>    </span><span style="color:#a3be8c;">javascript </span><span>= {</span><span style="color:#d08770;">...</span><span>},
+</span><span>    </span><span style="color:#a3be8c;">javascriptreact </span><span>= {</span><span style="color:#d08770;">...</span><span>},
+</span><span>    </span><span style="color:#d08770;">... </span><span>= </span><span style="color:#d08770;">...
+</span><span>};
+</span></code></pre>
+<p>Listo, esas son las dos soluciones para el temita de importar snippets de react (.jsx) a luasnip.</p>
+<h4 id="fuentes">Fuentes</h4>
+<p><a href="https://github.com/L3MON4D3/LuaSnip/issues/132">L3MON4D3 html snippets in javascript/javascriptreact/vue</a></p>
+
+
+	<noscript>
+		<div style="height:30px" />
+	</noscript>
+</body>
+
+</html>
