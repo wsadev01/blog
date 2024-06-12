@@ -20,5 +20,5 @@ cp /etc/vconsole.conf ~/.globdotfiles/etc/vconsole.conf
 mkdir -p ~/.globdotfiles/etc/X11/xinit/
 mkdir -p ~/.globdotfiles/etc/lightdm/
 
-echo "[+] Backup of ~/Documents, ~/Pictures, ~/Videos, ~/Music, and ~/unorganized
-tar -czvf backup-$(date +"%Y_%m_%d").tar.gz Documents/*  Pictures/*  Videos/*  Music/* unorganized/
+echo "[+] Backup of ~/Documents, ~/Pictures, ~/Videos, ~/Music, and ~/unorganized .ssh/ .gpg/"
+tar --exclude=Documents/lavoro -czvf backup-$(date +"%Y_%m_%d").tar.gz Documents/*  Pictures/*  Videos/*  Music/* unorganized/* .ssh/* .gpg/*

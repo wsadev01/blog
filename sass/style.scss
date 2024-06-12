@@ -68,6 +68,10 @@ code {
   color: $light-secondary;
   background-color: $light-primary;
 }
+pre {
+  background-color: $dark-primary
+}
+.language-lua { background-color: #2b303b}
 
 p {
   font-family: "IBM Plex Serif", serif !important;
